@@ -1,14 +1,15 @@
-
 import './App.css';
-import Container from './components/Container';
+import Dropdown from './components/Dropdown';
 import { WeatherProvider } from './context/WeatherContext';
 
 function App() {
+  
   return (
     <div className="App">
+        {/* context api */}
       <WeatherProvider>
-        {/* provide ile childd'lara dataları gönderebilriz, erisim sağlayabilir yani. Buradaki data ne value degerimiz  */}
-      <Container />
+        {/* provide ile child'lara dataları gönderebilriz, erisim sağlayabilir yani. Buradaki data ne value degerimiz  */}
+      <Dropdown />
       </WeatherProvider>
     </div>
   );

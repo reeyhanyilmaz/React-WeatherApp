@@ -1,21 +1,38 @@
-import {useContext} from 'react';
-import WeatherContext from '../context/WeatherContext';
+import { useWeather  } from '../context/WeatherContext';
+import citiesJSON from "../data/cities.json";
+import {useFormik} from "formik"
+import React, {useState} from "react";
 
 function Dropdown() {
 
-  const data = useContext(WeatherContext);
-  console.log(data)
+  // custom hook
+  const {SetWeather} = useWeather();
+
+  //JSON city data icin state olusturdum.
+  const [city] = useState(citiesJSON);
+
+  const {values, handleChange, handleSubmit} = useFormik({
+    initialvalues: {
+      cityName: "İstanbul",
+    },
+    onSubmit : (values) => {
+      console.log(values);
+    },
+  })
+
   return (
-    <div className="dropdown">
-            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Select city
-            </button>
-            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a className="dropdown-item" href="#">Action</a></li>
-              <li><a className="dropdown-item" href="#">Another action</a></li>
-              <li><a className="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-      </div>
+    //item JSON verimizdeki her bir data. item name şehir isimlerimiz.
+    <form onSubmit={handleSubmit}>
+      <select name="cityName" onChange={handleChange} >
+        
+        {city.map((item) => (
+          <option key={item.id} value={item.name}>
+            {item.name}
+          </option>
+        ))}
+
+      </select>
+    </form>
   )
 }
 
