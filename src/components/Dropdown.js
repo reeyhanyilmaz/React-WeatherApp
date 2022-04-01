@@ -9,24 +9,24 @@ function Dropdown() {
   const {SetWeather} = useWeather();
 
   //JSON city data icin state olusturdum.
-  const [city] = useState(citiesJSON);
+  const [cityJSON] = useState(citiesJSON);
 
-  const {values, handleChange, handleSubmit} = useFormik({
-    initialvalues: {
-      cityName: "İstanbul",
+  const { handleChange, handleSubmit, values} = useFormik({
+    initialValues: {
+      city: "İstanbul",
     },
     onSubmit : (values) => {
       console.log(values);
     },
-  })
+  });
 
   return (
     //item JSON verimizdeki her bir data. item name şehir isimlerimiz.
     <form onSubmit={handleSubmit}>
-      <select name="cityName" onChange={handleChange} >
+      <select name="city" onChange={handleChange} value={values.city}>
         
-        {city.map((item) => (
-          <option key={item.id} value={item.name}>
+        {cityJSON.map((item) => (
+          <option key={item.id} value={item.name} >
             {item.name}
           </option>
         ))}

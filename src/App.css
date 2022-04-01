@@ -1,3 +1,101 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+.weather-card-container {
+    flex-basis: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 10px 0;
+}
+
+
+.container{
+  max-width: 1200px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+  height: 100vh;
+  margin: 0 auto;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container p{
+  margin: 5px;
+}
+header{
+  width: 100%;
+  height: 80px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3) ;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+header select{
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 2px 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+header select:focus{
+  outline: none;
+}
+.weather-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 40vh;
+}
+.weather-container .weather-item{
+  flex-basis: 12%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 10px 0;
+}
+.weather-container .weather-item:nth-child(1){
+  background-color: rgba(197, 158, 113, 0.178);        
+}
+
+/*description*/
+.weather-item .description{
+ text-transform: capitalize;
+}
+/*temp-max*/
+.weather-item .temp-max, .weather-item .temp-min{       
+  padding: 5px;
+  color: white;
+  width: 50%;
+  text-align: center;
+  border-radius: 5px;
+}
+.weather-item .temp-max{
+  background-color: rgb(197, 158, 113); 
+}
+.weather-item .temp-min{
+  background-color: rgb(113, 180, 197);    
+}
+/*temp-min*/
+
+/*day*/
+.weather-item .day{
+  font-weight: bold;
 }
