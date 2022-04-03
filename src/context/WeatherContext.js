@@ -1,15 +1,24 @@
 import {createContext, useContext, useState} from 'react'
+import citiesJSON from "../data/cities.json";
+// JSON import ettik yani Türkiye illeri bilgileri olan dosyamızı.
+
 const WeatherContext = createContext();
 
 export const WeatherProvider = ({children}) => {
-    const [weather, setWeather] = useState();
+    const [weatherData, setWeatherData] = useState([]);
+    const [city, setCity] = useState(citiesJSON);
     const values = {
-        weather,
-        setWeather,
-    }
-    return <WeatherContext.Provider value={values}> {children} </WeatherContext.Provider>
-
+        weatherData,
+        setWeatherData,
+        city,
+        setCity,
+        citiesJSON,
+    };
+    
+    return ( 
+    <WeatherContext.Provider value={values}> {children} </WeatherContext.Provider>
+    )
 };
 
-//custom hook kullanıyoruz burada. Tekrar tekrar aynı seyleri componnetlere yazmamak icin.
+//custom hook kullanıyoruz burada. Tekrar tekrar aynı seyleri componentlere yazmamak icin.
 export const useWeather = () => useContext(WeatherContext);
