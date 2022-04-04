@@ -5,31 +5,39 @@ import {useFormik} from "formik"
 
 function Dropdown() {
   // custom hook kullandık. State tanımlarımızı context'e esitledik(useWeather).
-  const {weatherData, setWeatherData, city, setCity , citiesJSON} = useWeather();
-  const { handleChange, values} = useFormik({
+  const {citiesJSON , city, setCity} = useWeather();
+  const { handleChange,  values} = useFormik({
     initialValues: {
-      city: "İstanbul",
-      latitude: "41.0053",
-      longitude: "28.9770",
+      "name": "İstanbul",
+      "latitude": "41.0053",
+      "longitude": "28.9770",
     },
   });
 
+//   const setMe = (e) =>{
+//     for (let i = 0; i < citiesJSON.length; i++) {
+//         if(e.target.value === citiesJSON[i].name){
+//             setCity(citiesJSON[i]);
+//         }
+//     }
+// } 
 
   return (
     //item JSON verimizdeki her bir data. item name şehir isimlerimiz.
     <form>
-      <select name="city" id ="city" onChange={handleChange} value={values.city} data-lat={values.latitude}
+      <select name="name" id ="name" onChange={handleChange} value={values.name} data-lat={values.latitude}
           data-long={values.longitude}>        
-        {citiesJSON.map((item) => (
-          <option key={item.id} value={item.name} data-lat={item.latitude}
+        {citiesJSON.map((item, i) => (
+          <option key={i} value={item.name} data-lat={item.latitude}
           data-long={item.longitude}>
             {item.name}
           </option>
         ))}
       </select>
-      <h1>Hava Durumu</h1>
+      <h1>Weather App </h1>
       <h3>{new Date().toLocaleDateString("tr")}</h3>
     </form>
+   
   )
 }
 

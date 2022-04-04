@@ -5,14 +5,18 @@ import citiesJSON from "../data/cities.json";
 const WeatherContext = createContext();
 
 export const WeatherProvider = ({children}) => {
-    const [weatherData, setWeatherData] = useState([]);
-    const [city, setCity] = useState(citiesJSON);
+    const [weatherData, setWeatherData] = useState("");
+    const [city, setCity] = useState("İstanbul");
+    const [coord, setCoord] = useState({ "latitude": "41.0053",
+    "longitude": "28.9770",})
     const values = {
         weatherData,
         setWeatherData,
         city,
         setCity,
         citiesJSON,
+        coord, 
+        setCoord
     };
     
     return ( 
