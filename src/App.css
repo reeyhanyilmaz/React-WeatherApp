@@ -116,3 +116,70 @@ form select:focus {
   text-transform: uppercase;
   color: #ea6c4d
 }
+
+
+/*tablet*/
+@media screen and (max-width: 768px) {
+
+  body,
+  html {
+    background-image: url("./assets/background-responsive.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+    .header-component-div{
+     display: none;
+    }
+  
+    form {
+      width: 80%;
+      margin-bottom: 10px;
+    }
+
+    .weather-card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    }
+
+    .weather-card-container .weather-item {
+      margin: 5px 5px;
+    }
+ }
+
+/*mobile*/
+@media screen and (max-width: 421px) {
+  
+  body,
+  html {
+    background-image: url("./assets/background-responsive.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  form {
+  width: 80%;
+  margin-top: 10px;
+  }
+
+  form select {
+    margin-right: 10px;
+  }
+
+  .weather-card-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  .weather-card-container .weather-item {
+    margin: 15px 0;
+    width: 200px;
+    height: 300px;
+  }
+
+}
