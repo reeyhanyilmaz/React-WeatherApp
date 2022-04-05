@@ -44,7 +44,7 @@ form select:focus{
   min-height: 40vh;
 }
 .weather-card-container .weather-item{
-  flex-basis: 12%;
+  flex-basis: 12%; /*alanı 8 esit karta bölmeyi sagladık */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,6 +52,7 @@ form select:focus{
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   padding: 10px 0;
+  margin-top: 10px;
 }
 .weather-card-container .weather-item:nth-child(1){
   background-color: rgba(197, 158, 113, 0.178);        
@@ -62,7 +63,7 @@ form select:focus{
  text-transform: capitalize;
 }
 /* temp-max*/ 
- .weather-item .temp-max, .weather-item .temp-min{       
+ /* .weather-item .temp-max, .weather-item .temp-min{       
   padding: 5px;
   color: white;
   width: 50%;
@@ -74,7 +75,7 @@ form select:focus{
 }
 .weather-item .temp-min{
   background-color: rgb(113, 180, 197);    
-} 
+}  */
 /*temp-min
 
 /*day*/
