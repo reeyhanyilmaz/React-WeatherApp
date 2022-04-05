@@ -1,5 +1,6 @@
 import './App.css';
 import Dropdown from './components/Dropdown';
+import Header from './components/Header';
 import WeatherCard from './components/WeatherCard';
 import { WeatherProvider } from './context/WeatherContext';
 function App() { 
@@ -7,7 +8,7 @@ function App() {
       <WeatherProvider> {/* context api'dan geliyor */}
         <div className="app">
         {/* provide ile child'lara dataları gönderebilriz, erisim sağlayabilir yani. Buradaki data ne value degerimiz  */}
-        <h1>Weather App</h1>
+      <Header />
       <Dropdown />
       <WeatherCard />
       </div>
