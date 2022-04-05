@@ -6,11 +6,11 @@ import {useFormik} from "formik"
 function Dropdown() {
   // custom hook kullandık. State tanımlarımızı context'e esitledik(useWeather).
   const {citiesJSON , city, setCity ,day} = useWeather();
-  const {values} = useFormik({
-    initialValues: {
-      "name": "",
-    },
-  });
+  // const {values} = useFormik({
+  //   initialValues: {
+  //     "name": "",
+  //   },
+  // });
 
   //dropdown'dan her sehir ismi degistiginde o verilerin gelmesi icin for döngüsü. 
   const changeCityName = (e) =>{
