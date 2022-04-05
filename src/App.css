@@ -1,84 +1,101 @@
-.app{
-  max-width: 1200px;
- display: flex;
- align-items: center;
- justify-content: center;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  background-image: url("./assets/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.app {
+  max-width: 1300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
   margin: 0 auto;
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
+  /* font-family: "Fredoka One", cursive; */
+  position: relative;
 }
 
-
-/* .app p{
+.app p {
   margin: 5px;
-} */
+}
 
+/*dropdown */
+#name {
+  /* font-family: "Fredoka One", cursive; */
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ea6c4d;
+  color: white;
+  border: none;
+}
+
+h1,h3 {
+  font-weight: lighter;
+}
 
 form {
   width: 100%;
   height: 80px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3) ;
-  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
 }
-form select{
+form select {
   height: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
   padding: 2px 5px;
   cursor: pointer;
   font-size: 18px;
 }
-form select:focus{
+form select:focus {
   outline: none;
 }
-.weather-card-container{
+.weather-card-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   min-height: 40vh;
 }
-.weather-card-container .weather-item{
+.weather-card-container .weather-item {
   flex-basis: 12%; /*alanı 8 esit karta bölmeyi sagladık */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
   padding: 10px 0;
   margin-top: 10px;
 }
-.weather-card-container .weather-item:nth-child(1){
-  background-color: rgba(197, 158, 113, 0.178);        
+.weather-card-container .weather-item:nth-child(1)  {
+  border: 3px solid #ea6c4d;
 }
 
 /*description*/
-.weather-item .description{
- text-transform: capitalize;
+.weather-item .description {
+  text-transform: capitalize;
+  /*kelimelerin ilk harfleri büyük baslayacak.*/
+  margin-bottom: 5px;
 }
-/* temp-max*/ 
- /* .weather-item .temp-max, .weather-item .temp-min{       
-  padding: 5px;
-  color: white;
-  width: 50%;
-  text-align: center;
-  border-radius: 5px;
-}
-.weather-item .temp-max{
-  background-color: rgb(197, 158, 113); 
-}
-.weather-item .temp-min{
-  background-color: rgb(113, 180, 197);    
-}  */
-/*temp-min
 
-/*day*/
-.weather-item .day{
+.weather-item .day,
+.weather-item .temp-max {
   font-weight: bold;
+  text-transform: uppercase;
+  color: #ea6c4d
 }
