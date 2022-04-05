@@ -11,16 +11,46 @@ export const WeatherProvider = ({children}) => {
     //varsayılan İstanbul göstermesi icin 33.index verdim. index numaraları 0'dan baslar.
     const [city, setCity] = useState(citiesJSON[33]);
 
-    const [isLoading, setIsLoading] = useState(true);
-    
+    //cardlar icin kısa gösterim
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    //header time
+    const date = new Date();
+        let day = date.getDay();
+        switch (day) {
+        case 0:
+            day = "Sunday";
+            break;
+        case 1:
+            day = "Monday";
+            break;
+        case 2:
+            day = "Tuesday";
+            break;
+        case 3:
+            day = "Wednesday";
+            break;
+        case 4:
+            day = "Thursday";
+            break;
+        case 5:
+            day = "Friday";
+            break;
+        case 6:
+            day = "Saturday";
+            break;
+        default:
+            day = "";
+}
+
     const values = {
         weatherData,
         setWeatherData,
         city,
         setCity,
         citiesJSON,
-        isLoading, 
-        setIsLoading
+        days,
+        day
     };
     
     return ( 

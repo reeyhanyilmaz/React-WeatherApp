@@ -30,6 +30,22 @@ html {
   margin: 5px;
 }
 
+/*header image and h1*/
+.header-component-div {
+  display: flex;
+  flex-direction: row;
+
+}
+
+h1,h3 {
+  font-weight: lighter;
+}
+
+h1 {
+  font-size: 40px;
+  margin-left: 10px;
+}
+
 /*dropdown */
 #name {
   /* font-family: "Fredoka One", cursive; */
@@ -37,10 +53,6 @@ html {
   background-color: #ea6c4d;
   color: white;
   border: none;
-}
-
-h1,h3 {
-  font-weight: lighter;
 }
 
 form {
@@ -53,6 +65,7 @@ form {
   justify-content: space-between;
   padding: 10px 20px;
 }
+
 form select {
   height: 40px;
   border: 1px solid rgba(0, 0, 0, 0.5);
@@ -61,9 +74,12 @@ form select {
   cursor: pointer;
   font-size: 18px;
 }
+
 form select:focus {
   outline: none;
 }
+
+/*card container section*/
 .weather-card-container {
   display: flex;
   align-items: center;
@@ -80,13 +96,11 @@ form select:focus {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   border-radius: 7px;
   padding: 10px 0;
-  margin-top: 10px;
 }
-.weather-card-container .weather-item:nth-child(1)  {
+.weather-card-container .weather-item:nth-child(1){
   border: 3px solid #ea6c4d;
 }
 
-/*description*/
 .weather-item .description {
   text-transform: capitalize;
   /*kelimelerin ilk harfleri büyük baslayacak.*/

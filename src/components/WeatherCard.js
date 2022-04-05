@@ -1,11 +1,10 @@
 import {useEffect} from 'react';
-// import axios from 'axios';
 import { useWeather  } from '../context/WeatherContext';
 
 function WeatherCard() {
   // custom hook kullandık. State tanımlarımızı context'e esitledik(useWeather).
-  const {weatherData, setWeatherData, city, isLoading, setIsLoading} = useWeather();
-  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const {weatherData, setWeatherData, city, days} = useWeather();
+  
   console.log(weatherData);
   console.log(city);
 
@@ -23,15 +22,6 @@ function WeatherCard() {
 
 
   return (
-    // <div className="weather-card-container">
-    //   {
-        
-    //    weatherData ? weatherData.map((WeatherInfo,index)=>{
-    //     return  <WeatherInfo key={index} weatherData={WeatherInfo} />
-    //     })
-    //     : "Loading..." }
-    // </div>
-
     <div className="weather-card-container">
     {weatherData &&
       weatherData.map((oneDay, i) => {
@@ -41,23 +31,21 @@ function WeatherCard() {
             <div>
               <img
                 src={`https://openweathermap.org/img/wn/${oneDay.weather[0].icon}@2x.png`}
-                alt="weather icon"
-              />
+                alt="weather icon"/>
             </div>
 
             <span className="description">{oneDay.weather[0].description}</span>
             {/* burada weather[0].description, temp.min-temp.max ,dt cektigimiz API'dan gelen degerler. Gelen degerleri console'dan okuyabiliriz. */}
-            <p><span className='temp-max'>{Math.round(oneDay.temp.max)}&#176;C </span>             
+            <p>
+              <span className='temp-max'>{Math.round(oneDay.temp.max)}&#176;C </span>             
               <span>   </span>
               <span>{Math.round(oneDay.temp.min)}&#176;C </span>              
-            </p>
-          
+            </p>         
           </div>
         );
       }
       )}
-  </div>
-      
+  </div>      
   )
 }
 
