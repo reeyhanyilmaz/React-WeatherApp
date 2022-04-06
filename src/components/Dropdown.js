@@ -1,7 +1,7 @@
 import { useWeather  } from '../context/WeatherContext';
 
 //form yapısında Formik kullandım.
-import {useFormik} from "formik"
+// import {useFormik} from "formik"
 
 function Dropdown() {
   // custom hook kullandık. State tanımlarımızı context'e esitledik(useWeather).
