@@ -36,10 +36,10 @@ function WeatherCard() {
 
             <span className="description">{oneDay.weather[0].description}</span>
             {/* burada weather[0].description, temp.min-temp.max ,dt cektigimiz API'dan gelen degerler. Gelen degerleri console'dan okuyabiliriz. */}
-            <p>
+            <p className='temp-p'>
               <span className='temp-max'>{Math.round(oneDay.temp.max)}&#176;C </span>             
               <span>   </span>
-              <span>{Math.round(oneDay.temp.min)}&#176;C </span>              
+              <span className='temp-min'>{Math.round(oneDay.temp.min)}&#176;C </span>              
             </p>         
           </div>
         );
