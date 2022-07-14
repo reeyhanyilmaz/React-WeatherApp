@@ -34,8 +34,10 @@ html {
 
 /*header image and h1*/
 .header-component-div {
+  width: 100%; /*Tam genişlik verdim çünkü masaüstün görünümde weather ve app ayrı satırlarda görünüyordu.*/
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */ /*flex-direction varsayılan olarak row'dur. O nedenle kapatıp, yoruma aldım */
+  justify-content: center; /* %100 genişlik verdiğim için, tekrar ekranın ortasında hizalamak amacıyla kullandım*/
 
 }
 
@@ -64,7 +66,7 @@ form {
   border-radius: 7px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly; /* space-between yerine evenly daha güzel oldu sanki*/
   padding: 10px 20px;
 }
 
@@ -85,12 +87,15 @@ form select:focus {
 .weather-card-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /*ekran küçüldükçe alt satıra inen günlerin merkezden sıralanması için*/
+  gap: 0.4rem; /* card aralarına boşluk bırakmak için*/
   width: 100%;
   min-height: 40vh;
+  flex-wrap: wrap;
+  padding: 1rem 0.5rem;
 }
 .weather-card-container .weather-item {
-  flex-basis: 12%; /*alanı 8 esit karta bölmeyi sagladık */
+  /*flex-basis: 12%; /*alanı 8 esit karta bölmeyi sagladık */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,6 +103,7 @@ form select:focus {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   border-radius: 7px;
   padding: 10px 0;
+  min-width: 150px !important;
 }
 .weather-card-container .weather-item:nth-child(1){
   border: 3px solid #ea6c4d;
@@ -115,6 +121,13 @@ form select:focus {
   font-weight: bold;
   text-transform: uppercase;
   color: #ea6c4d
+}
+.weather-item .temp-p{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  /* sıcak ve soğuk ısılarının arasını açmak için flex ve gap kullandım*/
 }
 
 
@@ -136,11 +149,13 @@ form select:focus {
     form {
       width: 80%;
       margin-bottom: 10px;
+      gap: 0.7rem;
     }
 
     .weather-card-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+      overflow: scroll;
     }
 
     .weather-card-container .weather-item {
@@ -155,7 +170,7 @@ form select:focus {
   html {
     background-image: url("./assets/background-responsive.jpg");
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat; /*mobilde günler alt alta olduğu için arkaplan resmi kısa kalıyor, repeat ile çoğalttım*/
     background-size: cover;
   }
 
@@ -169,17 +184,14 @@ form select:focus {
   }
 
   .weather-card-container {
-    display: flex;
+    grid-template-columns: 1fr;
     align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
+    justify-items: center;
     overflow: scroll;
+    padding-bottom: 1rem;
   }
 
   .weather-card-container .weather-item {
-    margin: 15px 0;
-    width: 200px;
-    height: 300px;
+    width: 160px;
   }
-
 }
